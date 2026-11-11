@@ -1,1 +1,28 @@
 GET http://localhost:3000/api/fotos
+
+### Consultar una foto
+GET http://localhost:3000/api/fotos/1
+
+### Crear una foto
+POST http://localhost:3000/api/fotos
+Content-Type: application/json
+
+{
+    "titulo": "Montaña",
+    "descripcion": "Paseo por la sierra",
+    "calificacion": 5
+}
+
+### Actualizar solo la calificacion (conserva los otros campos)
+PATCH http://localhost:3000/api/fotos/3
+Content-Type: application/json
+
+{
+    "calificacion": 4
+}
+
+### Eliminar la foto (204 sin cuerpo)
+DELETE http://localhost:3000/api/fotos/3
+
+### Comprobar que ya no existe (404)
+GET http://localhost:3000/api/fotos/3
